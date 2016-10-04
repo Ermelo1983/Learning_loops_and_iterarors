@@ -4,7 +4,7 @@ def print_divider
 end
 
 def print_progress_bar
-  3.times { sleep 0.5; print "."}
+  3.times { sleep 2.0; print "."}
   puts "\n"
 end
 
@@ -19,7 +19,7 @@ ingredients = [
   {name: "salt", quantity: "some"},
 ]
 
-puts "* Let's cook a Spanish Omelette! *"
+puts "   * Let's cook a Spanish Omelette! *"
 print_divider
 
 puts "You need the following ingredients:"
@@ -27,3 +27,20 @@ puts "You need the following ingredients:"
 ingredients.each do | ingredient |
   puts "- #{ingredient[:quantity]} #{ingredient[:name]}"
 end
+
+loop do
+  puts "\n"
+  print_divider
+
+    puts "Got all ingredients you need, type y for yes and n for no "
+    answer = gets.chomp.downcase
+    if answer == "n"
+      puts "You need to go shopping!"
+      print_progress_bar
+    elsif answer == "y"
+      puts "Let's start cooking!"
+      break
+    else
+      puts "You typed a wrong input, try again!"
+    end
+  end
