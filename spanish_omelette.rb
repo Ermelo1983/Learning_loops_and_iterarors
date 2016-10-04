@@ -4,7 +4,7 @@ def print_divider
 end
 
 def print_progress_bar
-  3.times { sleep 2.0; print "."}
+  3.times { sleep 0.1; print "."}
   puts "\n"
 end
 
@@ -78,7 +78,16 @@ loop do
     counter = 0
     while counter < NUM_POTATOES
       counter += 1
-      print "Scraping potato #{counter} into thick slices."
+      print "Scraping potato #{counter}."
+      print_progress_bar
+    end
+  end
+
+  def cut_potatoes
+    counter = 0
+    while counter < NUM_POTATOES
+      counter += 1
+      print "Cutting #{counter} into thick slices."
       print_progress_bar
     end
   end
