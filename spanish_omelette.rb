@@ -1,4 +1,4 @@
-def print_devider
+def print_divider
   puts "*" * 40
   puts "\n"
 end
@@ -18,3 +18,6 @@ ingredients = [
   {name: "oil", quantity: "some"},
   {name: "salt", quantity: "some"},
 ]
+
+puts "* Let's cook a Spanish Omelette! *"
+print_divider
